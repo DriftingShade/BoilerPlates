@@ -32,6 +32,8 @@ def create_gizmo():
     if not Gizmo.form_is_valid(request.form):
         return redirect("/gizmos/new")
     
+    Gizmo.create(request.form)
+    
     return redirect("/gizmos/all")
 
 @app.get("/gizmos/<int:gizmo_id>")
